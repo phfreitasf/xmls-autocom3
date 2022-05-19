@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("");
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Extrair = new System.Windows.Forms.TabPage();
             this.label6 = new System.Windows.Forms.Label();
@@ -46,11 +45,15 @@
             this.textSenha = new System.Windows.Forms.TextBox();
             this.textLogin = new System.Windows.Forms.TextBox();
             this.Contar = new System.Windows.Forms.TabPage();
-            this.listXmls = new MaterialSkin.Controls.MaterialListView();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
+            this.Modelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Serie = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nota = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.Extrair.SuspendLayout();
             this.Contar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -162,6 +165,7 @@
             this.CaixaCheckbox1.TabIndex = 28;
             this.CaixaCheckbox1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.CaixaCheckbox1.UseVisualStyleBackColor = true;
+            this.CaixaCheckbox1.CheckedChanged += new System.EventHandler(this.materialCheckbox1_CheckedChanged);
             // 
             // textCaixas
             // 
@@ -240,7 +244,7 @@
             // 
             // Contar
             // 
-            this.Contar.Controls.Add(this.listXmls);
+            this.Contar.Controls.Add(this.dataGridView1);
             this.Contar.Controls.Add(this.materialButton1);
             this.Contar.Location = new System.Drawing.Point(4, 24);
             this.Contar.Name = "Contar";
@@ -250,25 +254,21 @@
             this.Contar.Text = "Contar";
             this.Contar.UseVisualStyleBackColor = true;
             // 
-            // listXmls
+            // dataGridView1
             // 
-            this.listXmls.AutoSizeTable = false;
-            this.listXmls.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.listXmls.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listXmls.Depth = 0;
-            this.listXmls.FullRowSelect = true;
-            this.listXmls.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1});
-            this.listXmls.Location = new System.Drawing.Point(6, 20);
-            this.listXmls.MinimumSize = new System.Drawing.Size(200, 100);
-            this.listXmls.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.listXmls.MouseState = MaterialSkin.MouseState.OUT;
-            this.listXmls.Name = "listXmls";
-            this.listXmls.OwnerDraw = true;
-            this.listXmls.Size = new System.Drawing.Size(293, 243);
-            this.listXmls.TabIndex = 1;
-            this.listXmls.UseCompatibleStateImageBehavior = false;
-            this.listXmls.View = System.Windows.Forms.View.Details;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Modelo,
+            this.Serie,
+            this.Nota});
+            this.dataGridView1.EnableHeadersVisualStyles = false;
+            this.dataGridView1.Location = new System.Drawing.Point(8, 18);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.RowTemplate.Height = 25;
+            this.dataGridView1.Size = new System.Drawing.Size(287, 265);
+            this.dataGridView1.TabIndex = 1;
             // 
             // materialButton1
             // 
@@ -290,6 +290,29 @@
             this.materialButton1.UseVisualStyleBackColor = true;
             this.materialButton1.Click += new System.EventHandler(this.materialButton1_Click);
             // 
+            // Modelo
+            // 
+            this.Modelo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Modelo.HeaderText = "Modelo";
+            this.Modelo.Name = "Modelo";
+            this.Modelo.ReadOnly = true;
+            this.Modelo.Width = 50;
+            // 
+            // Serie
+            // 
+            this.Serie.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Serie.HeaderText = "Serie";
+            this.Serie.Name = "Serie";
+            this.Serie.ReadOnly = true;
+            this.Serie.Width = 57;
+            // 
+            // Nota
+            // 
+            this.Nota.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Nota.HeaderText = "Nota";
+            this.Nota.Name = "Nota";
+            this.Nota.ReadOnly = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -305,6 +328,7 @@
             this.Extrair.PerformLayout();
             this.Contar.ResumeLayout(false);
             this.Contar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -329,6 +353,9 @@
         private Label label2;
         private Label label1;
         private MaterialSkin.Controls.MaterialButton materialButton1;
-        private MaterialSkin.Controls.MaterialListView listXmls;
+        private DataGridView dataGridView1;
+        private DataGridViewTextBoxColumn Modelo;
+        private DataGridViewTextBoxColumn Serie;
+        private DataGridViewTextBoxColumn Nota;
     }
 }

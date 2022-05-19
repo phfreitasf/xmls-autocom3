@@ -40,19 +40,8 @@ namespace XML_SQL
 
         private void materialButton1_Click(object sender, EventArgs e)
         {
-            string[] files;
-            using (var fbd = new FolderBrowserDialog())
-            {
-                DialogResult result = fbd.ShowDialog();
 
-                if (result == DialogResult.OK && !string.IsNullOrWhiteSpace(fbd.SelectedPath))
-                {
-                    files = Directory.GetFiles(fbd.SelectedPath);
-                    MessageBox.Show(files[);
-                    listXmls.Items.Add(Ler_xml.ContarNumeros(files).ToString());
-                }
-            }
-
+            Ler_xml.AddToGrid(dataGridView1);
             
         }
     }
